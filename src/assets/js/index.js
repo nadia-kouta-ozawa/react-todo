@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 
 import { App } from "./App";
 import Example from "./utils/Example";
-// import HelloWorld from "./utils/HelloWorld";
+import HelloWorld from "./utils/HelloWorld";
 
 class Main {
   constructor() {
@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   ReactDom.render(
     <React.StrictMode>
+      <HelloWorld />
       <App />
     </React.StrictMode>,
     document.getElementById("app")

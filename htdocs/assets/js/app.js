@@ -116,6 +116,34 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./src/assets/js/components/ColorfulMessage.jsx":
+/*!******************************************************!*\
+  !*** ./src/assets/js/components/ColorfulMessage.jsx ***!
+  \******************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ColorfulMessage": function() { return /* binding */ ColorfulMessage; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var ColorfulMessage = function ColorfulMessage(props) {
+  // console.log(props);
+  var color = props.color,
+      children = props.children;
+  var contentStyle = {
+    color: color,
+    fontSize: "32px"
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    style: contentStyle
+  }, children));
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/components/CompleteTodos.jsx":
 /*!****************************************************!*\
   !*** ./src/assets/js/components/CompleteTodos.jsx ***!
@@ -261,6 +289,86 @@ var Example = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./src/assets/js/utils/HelloWorld.js":
+/*!*******************************************!*\
+  !*** ./src/assets/js/utils/HelloWorld.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ColorfulMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ColorfulMessage */ "./src/assets/js/components/ColorfulMessage.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+var HelloWorld = function HelloWorld() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      num = _useState2[0],
+      setNum = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      faceShowFlag = _useState4[0],
+      setfaceShowFlag = _useState4[1];
+
+  var onClickCountUp = function onClickCountUp() {
+    setNum(num + 1);
+  };
+
+  var onClickCountDown = function onClickCountDown() {
+    setNum(num - 1);
+  };
+
+  var onClickCountReset = function onClickCountReset() {
+    setNum(0);
+  };
+
+  var onClickSwitchShowFlag = function onClickSwitchShowFlag() {
+    setfaceShowFlag(!faceShowFlag);
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faceShowFlag || setfaceShowFlag(true);
+      } else {
+        faceShowFlag && setfaceShowFlag(false);
+      }
+    }
+  }, [num]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ColorfulMessage__WEBPACK_IMPORTED_MODULE_1__.ColorfulMessage, {
+    color: "blue"
+  }, "\u304A\u5143\u6C17\u3067\u3059\u304B\uFF1F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ColorfulMessage__WEBPACK_IMPORTED_MODULE_1__.ColorfulMessage, {
+    color: "pink"
+  }, "\u304A\u5143\u6C17\u3067\u3059"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: onClickCountUp
+  }, "\u30AB\u30A6\u30F3\u30C8\u30A2\u30C3\u30D7\uFF01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: onClickCountDown
+  }, "\u30AB\u30A6\u30F3\u30C8\u30C0\u30A6\u30F3\uFF01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: onClickCountReset
+  }, "\u30AB\u30A6\u30F3\u30C8\u30EA\u30BB\u30C3\u30C8\uFF01"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, num), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: onClickSwitchShowFlag
+  }, "on/off"), faceShowFlag && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "\uD83D\uDE26"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HelloWorld);
 
 /***/ }),
 
@@ -33425,6 +33533,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/assets/js/App.jsx");
 /* harmony import */ var _utils_Example__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Example */ "./src/assets/js/utils/Example.js");
+/* harmony import */ var _utils_HelloWorld__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/HelloWorld */ "./src/assets/js/utils/HelloWorld.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -33434,7 +33543,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
- // import HelloWorld from "./utils/HelloWorld";
+
+
 
 var Main = /*#__PURE__*/_createClass(function Main() {
   _classCallCheck(this, Main);
@@ -33445,7 +33555,7 @@ var Main = /*#__PURE__*/_createClass(function Main() {
 
 window.addEventListener("DOMContentLoaded", function () {
   new Main();
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_App__WEBPACK_IMPORTED_MODULE_2__.App, null)), document.getElementById("app"));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_utils_HelloWorld__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_App__WEBPACK_IMPORTED_MODULE_2__.App, null)), document.getElementById("app"));
 });
 }();
 /******/ })()

@@ -9,6 +9,14 @@ const HelloWorld = () => {
     setNum(num + 1);
   };
 
+  const onClickCountDown = () => {
+    setNum(num - 1);
+  };
+
+  const onClickCountReset = () => {
+    setNum(0);
+  };
+
   const onClickSwitchShowFlag = () => {
     setfaceShowFlag(!faceShowFlag);
   };
@@ -28,10 +36,16 @@ const HelloWorld = () => {
       <ColorfulMessage color="blue">お元気ですか？</ColorfulMessage>
       <ColorfulMessage color="pink">お元気です</ColorfulMessage>
       <button onClick={onClickCountUp}>カウントアップ！</button>
+      <button onClick={onClickCountDown}>カウントダウン！</button>
+      <button onClick={onClickCountReset}>カウントリセット！</button>
+      <br />
+      <p>{num}</p>
       <br />
       <button onClick={onClickSwitchShowFlag}>on/off</button>
-      <p>{num}</p>
+
       {faceShowFlag && <p>😦</p>}
+      <br />
+      <br />
     </React.Fragment>
   );
 };
